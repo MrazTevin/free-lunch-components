@@ -16,7 +16,7 @@ class MiniActionBtn extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
-          color: btnColor ?? AppColors.primaryColor,
+          color: btnColor ?? AppColors.tPrimaryColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(
@@ -26,7 +26,7 @@ class MiniActionBtn extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                color: AppColors.color,
+                color: AppColors.tWhite,
                 fontSize: width * .01 + 14,
                 fontWeight: FontWeight.normal,
               ),
@@ -52,7 +52,7 @@ class MediumActionBtn extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         decoration: BoxDecoration(
-          color: btnColor ?? AppColors.primaryColor,
+          color: btnColor ?? AppColors.tPrimaryColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: Row(
@@ -62,9 +62,9 @@ class MediumActionBtn extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
-                color: AppColors.color,
+                color: AppColors.tWhite,
                 fontSize: width * .01 + 14,
-                fontWeight: FontWeight.normal,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ],
@@ -90,7 +90,7 @@ class ActionBtn extends StatelessWidget {
       constraints: BoxConstraints(minWidth: width * .5),
       padding: const EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(
-        color: btnColor ?? AppColors.primaryColor,
+        color: btnColor ?? AppColors.tPrimaryColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
@@ -101,7 +101,7 @@ class ActionBtn extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-              color: AppColors.color,
+              color: AppColors.tWhite,
               fontSize: width * .01 + 14,
               fontWeight: FontWeight.w600,
             ),
