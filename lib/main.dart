@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'constants/colors.dart';
 import 'constants/icons.dart';
 import 'widgets/action_buttons.dart';
+import 'widgets/avatar.dart';
 import 'widgets/total_card.dart';
+import 'widgets/account_info_withdraw_summary.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,16 +14,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const Home());
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+        fontFamily: 'WorkSans',
+      ),
+      home: const Home(),
+    );
   }
 }
 
@@ -54,6 +57,8 @@ class _HomeState extends State<Home> {
               AppSvgIcons.hamburgerDark,
               const Text('Hambuger Primary'),
               AppSvgIcons.hamburgerPrimary,
+              SizedBox(height: height * .02),
+              AppSvgIcons.hamburgerPrimary2,
               const Text('Hambuger Light'),
               Container(
                 color: Colors.black,
@@ -64,38 +69,91 @@ class _HomeState extends State<Home> {
               AppSvgIcons.lunchSent,
               const Text('Withdrawal'),
               AppSvgIcons.withdrawal,
+              const Text('Lunch Recived'),
+              AppSvgIcons.lunchRecieved,
               const Text('Mini Action Button'),
               MiniActionBtn(
                 text: 'Send Lunch',
-                btnColor: AppColors.primaryColor,
+                btnColor: AppColors.tPrimaryColor,
                 icon: AppSvgIcons.hamburgerLight,
               ),
               const Text('Action Button 1'),
               ActionBtn(
                 text: 'Return Home',
                 widthM: width * .8,
-                btnColor: AppColors.primaryColor,
+                btnColor: AppColors.tPrimaryColor,
               ),
               const Text('Action Button 2'),
               ActionBtn(
                 text: 'Send Lunch',
                 widthM: width * .8,
                 icon: AppSvgIcons.hamburgerLight,
-                btnColor: AppColors.primaryColor,
+                btnColor: AppColors.tPrimaryColor,
+              ),
+              SizedBox(height: height * .02),
+              ActionBtn(
+                text: 'Request Withdraw',
+                widthM: width * .8,
+                icon: AppIcons.getIcon('upload', AppColors.tWhite),
+                btnColor: AppColors.tShadeColor,
               ),
               const Text('Withdraw'),
-              const MediumActionBtn(
+              MediumActionBtn(
                 text: 'Withdraw',
-                icon: Icon(
-                  Icons.arrow_upward,
-                  color: AppColors.color,
-                ),
-                btnColor: AppColors.primaryColor,
+                icon: AppIcons.getIcon('upload', AppColors.tWhite),
+                btnColor: AppColors.tPrimaryColor,
+              ),
+              SizedBox(height: height * .02),
+              const MediumActionBtn(
+                text: 'Add your account details',
+                btnColor: AppColors.tPrimaryColor,
               ),
               const Text('Total'),
-              TotalCardOne(totalNum: '12', width: width * .9, height: height * .2,),
+              TotalCardOne(
+                totalNum: '12',
+                width: width * .9,
+                height: height * .2,
+              ),
               const Text('Total 2'),
-              TotalCardTwo(totalNum: '12', width: width * .9, height: height * .2,),
+              TotalCardTwo(
+                totalNum: '12',
+                width: width * .9,
+                height: height * .2,
+              ),
+              const Text('Total 3'),
+              SizedBox(height: height * .02),
+              TotalCardThree(
+                totalNum: '12',
+                width: width * .9,
+                height: height * .2,
+              ),
+              SizedBox(height: height * .02),
+              WithdrawSummary(
+                totalLunch: 'x12',
+                worth: '\$120(\$10 per lunch)',
+                width: width,
+                height: height,
+              ),
+              SizedBox(height: height * .02),
+              AccountInfo(
+                width: width,
+                height: height,
+                bankName: 'GTB',
+                accountName: 'Samuel Igboji Uche',
+                accountNumber: '*******415',
+              ),
+              SizedBox(height: height * .02),
+              const AvatarComponent(
+                image: AssetImage('assets/images/dp.png'),
+                width: 50,
+                height: 50,
+              ),
+              SizedBox(height: height * .02),
+              const AvatarComponent(
+                image: AssetImage('assets/images/dp.png'),
+                width: 40,
+                height: 40,
+              ),
               SizedBox(height: height * .02),
             ],
           ),
